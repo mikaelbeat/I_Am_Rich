@@ -10,14 +10,14 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mMediaPlayer;
-    MediaPlayer sadSound;
+    MediaPlayer happySound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sadSound = MediaPlayer.create(getApplicationContext(), R.raw.cheering);
+        happySound = MediaPlayer.create(getApplicationContext(), R.raw.cheering);
         mMediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.rich);
         mMediaPlayer.start();
 
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         mMediaPlayer.start();
     }
 
-    public void playSadSound(View v) {
-        sadSound.start();
+    public void playHappySound(View v) {
+        happySound.start();
     }
 
 }
