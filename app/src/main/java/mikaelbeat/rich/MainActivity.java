@@ -5,16 +5,19 @@ import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mMediaPlayer;
+    MediaPlayer sadSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sadSound = MediaPlayer.create(getApplicationContext(), R.raw.cheering);
         mMediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.rich);
         mMediaPlayer.start();
 
@@ -31,4 +34,9 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         mMediaPlayer.start();
     }
+
+    public void playSadSound(View v) {
+        sadSound.start();
+    }
+
 }
